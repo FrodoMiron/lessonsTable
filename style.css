@@ -1,0 +1,100 @@
+:root {
+  --width: 100%;
+  --height: 100%;
+}
+
+body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  font-family: samsung;
+}
+
+
+h2 {
+  font-size: 25px;
+}
+
+.lessonsTable {
+  margin: auto;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 999;
+  animation: starter 1s 3s forwards linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 1%;
+  box-shadow: 0 0 10px #000;
+  backdrop-filter: blur(40px);
+  border-radius: 5%;
+  padding: 7%;
+  opacity: 0;
+}
+
+@keyframes starter {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+span {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  transition: 1s;
+  z-index: 999;
+}
+
+.active {
+  color: #22bb33;
+  text-shadow: 0 0 10px;
+  font-size: 30px;
+  transition: 1s;
+}
+
+.end {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 1s;
+}
+
+.end span {
+  color: #4C4C4C;
+  transition: 1s;
+}
+
+.bg-sl {
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 0, 0% 100%, 100% 0%);
+  display: block;
+  background: #8390fa;
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: right;
+  z-index: -9999;
+
+}
+
+#sunday {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+  padding: 1%;
+  border-radius: 10px;
+}
