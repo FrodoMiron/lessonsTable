@@ -52,12 +52,15 @@ function obnova() {
     lessonsTable.innerHTML = `<h2 id="sunday">Сегодня воскресенье, уроков нет!<br>Всем хорошего дня!</h2>`;
   };
   /*понедельник*/
-  if (day == 5) {
+  if (day == 6) {
     if (hour < 8) {
       title.innerHTML = 'Сегодня будет 7 уроков'
     };
     if (hour >= 8 && hour < 14) {
-     title.innerHTML = `${hour}:${minute}:${seconds}`;
+      title.innerHTML = `<span class="counts">${hour}</span>:<span class="counts">${minute}</span>:<span class="counts">${seconds}</span>
+`;
+      title.classList.add('timer');
+
     };
     first.innerHTML = 'Физика';
     second.innerHTML = 'Алгебра';
@@ -67,7 +70,7 @@ function obnova() {
     sixth.innerHTML = 'Литература';
     seventh.innerHTML = 'Физкультура';
     changesAt7Lessons();
-    
+
     if (hour == 8) {
       if (minute > -1 && minute < 40) {
         first.classList.add('active');
@@ -144,37 +147,193 @@ function obnova() {
       };
       if (minute > 21) {
         seventh.classList.remove('active');
-        title.innerHTML = 'Сегодня было 7 уроков';
-      };
-      if (hour > 13) {
+        title.classList.remove('timer')
         title.innerHTML = 'Сегодня было 7 уроков';
       };
     };
-  };
-};
+    if (hour > 13) {
+      title.innerHTML = 'Сегодня было 7 уроков';
+      title.classList.remove('timer');
 
-function updateDate() {
-  date = new Date();
-  hour = date.getHours();
-  minute = date.getMinutes();
-  seconds = date.getSeconds();
-  year = date.getFullYear();
-  day = date.getDay();
-  month = date.getMonth();
-  today = date.getDate();
-  
-  if (minute < 10) {
-    minute = '0' + minute;
+    };
   };
-  if (hour < 10) {
-    hour = '0' + hour;
-  };
-  if (seconds < 10) {
-    seconds = '0' + hour;
-  };
-}
+  /*вторник*/
+  if (day == 2) {
+    if (hour < 8) {
+      title.innerHTML = 'Сегодня будет 7 уроков'
+    };
+    if (hour >= 8 && hour < 13) {
+      title.innerHTML = `<span class="counts">${hour}</span>:<span class="counts">${minute}</span>:<span class="counts">${seconds}</span>
+`;
+      title.classList.add('timer');
+    };
+    first.innerHTML = 'Физкультура';
+    second.innerHTML = 'География';
+    third.innerHTML = 'Химия';
+    fourth.innerHTML = 'Геометрия';
+    fiveth.innerHTML = 'Английский язык';
+    sixth.innerHTML = 'Экономика';
+    changesAt6Lessons();
 
-setInterval(function run() {
-  updateDate();
-  obnova();
-}, 1000);
+    if (hour == 8) {
+      if (minute > -1 && minute < 40) {
+        first.classList.add('active');
+      };
+      if (minute > 39 && minute < 46) {
+        first.classList.remove('active');
+        change1.classList.add('active');
+      };
+      if (minute > 45 && minute < 60) {
+        change1.classList.remove('active');
+        second.classList.add('active');
+      };
+    };
+    if (hour == 9) {
+      if (minute > -1 && minute < 25) {
+        second.classList.add('active');
+      };
+      if (minute > 24 && minute < 31) {
+        second.classList.remove('active');
+        change2.classList.add('active');
+      };
+      if (minute > 30 && minute < 60) {
+        change2.classList.remove('active');
+        third.classList.add('active');
+      };
+    };
+    if (hour == 10) {
+      if (minute > -1 && minute < 10) {
+        third.classList.add('active');
+      };
+      if (minute > 9 && minute < 21) {
+        third.classList.remove('active');
+        change3.classList.add('active');
+      };
+      if (minute > 20 && minute < 60) {
+        change3.classList.remove('active');
+        fourth.classList.add('active');
+      };
+    };
+    if (hour == 11) {
+      if (minute > -1 && minute < 6) {
+        fourth.classList.remove('active');
+        change4.classList.add('active');
+      };
+      if (minute > 5 && minute < 45) {
+        change4.classList.remove('active');
+        fiveth.classList.add('active');
+      };
+      if (minute > 44 && minute < 51) {
+        fiveth.classList.remove('active');
+        change5.classList.add('active');
+      };
+      if (minute > 50 && minute < 60) {
+        change5.classList.remove('active');
+        sixth.classList.add('active');
+      };
+    };
+    if (hour == 12) {
+      if (minute > -1 && minute < 30) {
+        sixth.classList.add('active');
+      };
+      if (minute > 29) {
+        sixth.classList.remove('active');
+        title.classList.remove('timer');
+
+        title.innerHTML = 'Сегодня было 6 уроков';
+      };
+    };
+    if (hour > 12) {
+      title.classList.remove('timer');
+
+      title.innerHTML = 'Сегодня было 6 уроков';
+    };
+  };
+  /*среда*/
+  if (day == 3) {
+    if (hour >= 8) {
+      title.classList.add('timer');
+    };
+    if (hour == 8) {
+      if (minute > -1 && minute < 40) {
+        first.classList.add('active');
+      };
+      if (minute > 39 && minute < 46) {
+        first.classList.remove('active');
+        change1.classList.add('active');
+      };
+      if (minute > 45 && minute < 60) {
+        change1.classList.remove('active');
+        second.classList.add('active');
+      };
+    };
+    if (hour == 9) {
+      if (minute > -1 && minute < 25) {
+        second.classList.add('active');
+      };
+      if (minute > 24 && minute < 31) {
+        second.classList.remove('active');
+        change2.classList.add('active');
+      };
+      if (minute > 30 && minute < 60) {
+        change2.classList.remove('active');
+        third.classList.add('active');
+      };
+    };
+    if (hour == 10) {
+      if (minute > -1 && minute < 10) {
+        third.classList.add('active');
+      };
+      if (minute > 9 && minute < 21) {
+        third.classList.remove('active');
+        change3.classList.add('active');
+      };
+      if (minute > 20 && minute < 60) {
+        change3.classList.remove('active');
+        fourth.classList.add('active');
+      };
+    };
+    if (hour >= 11) {
+      if (minute > -1 && minute < 6) {
+        fourth.classList.remove('active');
+        title.classList.remove('timer');
+        title.innerHTML = 'Сегодня было 4 урока';
+      };
+    };
+  };
+    
+    /*четверг*/
+    if (day == 4) {
+      
+    };
+    /*пятница*/
+    if (day == 5) {};
+    /*суббота*/
+    if (day == 6) {};
+  };
+
+  function updateDate() {
+    date = new Date();
+    hour = date.getHours();
+    minute = date.getMinutes();
+    seconds = date.getSeconds();
+    year = date.getFullYear();
+    day = date.getDay();
+    month = date.getMonth();
+    today = date.getDate();
+    if (minute < 10) {
+      minute = '0' + minute;
+    };
+    if (hour < 10) {
+      hour = '0' + hour;
+    };
+    if (seconds < 10) {
+      seconds = '0' + seconds;
+    };
+  };
+
+
+  setInterval(function run() {
+    updateDate();
+    obnova();
+  }, 1000);
